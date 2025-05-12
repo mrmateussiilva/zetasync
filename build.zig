@@ -8,7 +8,7 @@ pub fn build(b: *std.Build) void {
         .name = "zetasend",
         .target = target,
         .optimize = optimize,
-        .root_source_file = .{ .path = "zetasend.zig" },
+        .root_source_file = b.path("zetasend.zig"),
     });
     b.installArtifact(zetasend);
 
@@ -16,7 +16,7 @@ pub fn build(b: *std.Build) void {
         .name = "zetareceive",
         .target = target,
         .optimize = optimize,
-        .root_source_file = .{ .path = "zetareceive.zig" },
+        .root_source_file = b.path("zetareceive.zig"),
     });
     b.installArtifact(zetareceive);
 }
